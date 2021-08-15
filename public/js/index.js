@@ -90,6 +90,14 @@ function render(data) {
     d9Table.innerHTML = data.d9
 }
 
+function parseId(input) {
+    let output = ''
+    for (i of input){
+        if (i != '0') output += i
+    }
+    return output
+}
+
 function fetchData(inputId, next){
     findBtn.disabled  = true
     fetch(`/api/xettuyen?id=${inputId}`, {
@@ -112,7 +120,7 @@ function fetchData(inputId, next){
 }
 
 function search(){
-    fetchData(idInput.value, render)
+    fetchData(parseId(idInput.value), render)
 }
 
 function redo(){
@@ -124,7 +132,7 @@ function redo(){
 idInput.addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
       event.preventDefault();
-      fetchData(idInput.value, render)
+      fetchData(parseId(idInput.value), render)
     }
   });
 
