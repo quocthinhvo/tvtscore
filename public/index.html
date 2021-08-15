@@ -42,7 +42,8 @@
             </div>
             
             <div id="ok" style="display:none">
-                <h2 class="text-center text-success">KẾT QUẢ</h2>
+                <h2 class="text-center" id="result">KẾT QUẢ</h2>
+                <h4 class="text-center" id="rank">Hạng: </h4>
                 <p id="fullname"><strong style="color: black">Họ và tên: </strong></p>
                 <p id="birthday"><strong style="color: black">Ngày sinh: </strong></p>
                 <p id="xeploai"><strong style="color: black">Xếp loại: </strong></p>
@@ -90,12 +91,18 @@
                         <th id="d9" class="valueTable"></th>
                     </tr>
                 </table>
-                <div class="row justify-content-center">
+                <div class="row justify-content-center no-print">
                     <div class="col-md-5 form-group text-center">
                       <button class="btn btn-block btn-info rounded-0 py-2 px-4" onClick="seemore()" >XEM THÊM</button>
                       <span class="submitting"></span>
                     </div>
                 </div>
+                <div class="row justify-content-center no-print">
+                  <div class="col-md-5 form-group text-center">
+                    <button class="btn btn-block btn-info rounded-0 py-2 px-4" onClick="printScore()" >IN KẾT QUẢ</button>
+                    <span class="submitting"></span>
+                  </div>
+              </div>
             </div>
             <div id="error" style="display:none">
                 <h2 class="text-center text-danger">ĐÃ CÓ LỖI</h2>
@@ -113,7 +120,9 @@
       </div>
     </div>
   </div>
-
+  <style type="text/css" media="print">
+    .no-print { display: none; }
+  </style>
   <style>
       .valueTable {
           text-decoration: none;

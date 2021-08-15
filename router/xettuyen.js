@@ -14,4 +14,8 @@ router.get('/', (req, res)=> {
     })
 })
 
+router.get('/max', (req, res)=> {
+    res.status(200).send(process.env.MAX)
+})
+
 module.exports = router;

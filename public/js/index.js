@@ -14,6 +14,8 @@ const uutienLabel = document.getElementById('uutien')
 const diemuutienLabel = document.getElementById('diemuutien')
 const xeploaiLabel = document.getElementById('xeploai')
 const tongdiemLabel = document.getElementById('tongdiem')
+const resultLabel = document.getElementById('result')
+const rankLabel = document.getElementById('rank')
 // table 
 const tbm6Table = document.getElementById('tbm6')
 const hl6Table = document.getElementById('hl6')
@@ -58,6 +60,17 @@ function render(data) {
     blockOutput.style.display = 'block'
     blockError.style.display = 'none'
 
+    fetchMax((value)=> {
+        if (data.rank <= value) {
+            resultLabel.innerHTML = "CHÚC MỪNG BẠN ĐÃ TRÚNG TUYỂN"
+            resultLabel.className += ' text-success'
+        } else {
+            resultLabel.innerHTML = "BẠN ĐÃ KHÔNG TRÚNG TUYỂN"
+            resultLabel.className += ' text-danger'
+        }
+    })
+    
+    rankLabel.innerHTML += data.rank
     fullnameLabel.innerHTML += `${data.firstname} ${data.lastname}`
     birthdayLabel.innerHTML += data.birthday
     thcsLabel.innerHTML += data.thcs
@@ -91,11 +104,11 @@ function render(data) {
 }
 
 function parseId(input) {
-    let output = ''
-    for (i of input){
-        if (i != '0') output += i
+    try {
+        return parseInt(input)
+    } catch (err) {
+        renderError("Số hồ sơ là số trong khoảng 001-999")
     }
-    return output
 }
 
 function fetchData(inputId, next){
@@ -119,6 +132,18 @@ function fetchData(inputId, next){
     })
 }
 
+function fetchMax(next){
+    fetch('/api/xettuyen/max', {
+        method: 'GET'
+    })
+    .then((data)=> {
+        return data.json()
+    })
+    .then((data)=>{
+        next(parseInt(data))
+    })
+}
+
 function search(){
     fetchData(parseId(idInput.value), render)
 }
@@ -138,4 +163,9 @@ idInput.addEventListener("keyup", function(event) {
 
 function seemore() {
     location.reload();
+}
+
+function printScore(){
+    window.print()
+
 }
