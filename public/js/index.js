@@ -46,7 +46,6 @@ if (!idQuery) {
     fetchData(idQuery, render)
 }
 
-
 function renderError(errorInput) {
     blockInput.style.display = 'none'
     blockOutput.style.display = 'none'
@@ -120,4 +119,15 @@ function redo(){
     blockInput.style.display = 'block'
     blockOutput.style.display = 'none'
     blockError.style.display = 'none'
+}
+
+idInput.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      fetchData(idInput.value, render)
+    }
+  });
+
+function seemore() {
+    location.reload();
 }
