@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>TVT Score</title>
+  </head>
+  <body>
+  <div class="content">
+    <div class="container">
+      <div class="row align-items-stretch justify-content-center no-gutters">
+        <div class="col-md-7">
+          <div class="form h-100 contact-wrap p-5">
+            <div id="search" style="display:none">
+              <h2 class="text-center text-success">XEM KẾT QUẢ XÉT TUYỂN 2021</h2>
+              <div class="row">
+                <div class="col-md-12 form-group mb-3">
+                  <label for="postid" class="col-form-label">Số hồ sơ</label>
+                  <input type="text" class="form-control" id="idstudent" placeholder="">
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-md-5 form-group text-center">
+                  <button id="findBtn" class="btn btn-block btn-info rounded-0 py-2 px-4" onClick="search()" >XEM</button>
+                  <span class="submitting"></span>
+                </div>
+              </div>
+            </div>
+            
+            <div id="ok" style="display:none">
+                <h2 class="text-center text-success">KẾT QUẢ</h2>
+                <p id="fullname"><strong style="color: black">Họ và tên: </strong></p>
+                <p id="birthday"><strong style="color: black">Ngày sinh: </strong></p>
+                <p id="xeploai"><strong style="color: black">Xếp loại: </strong></p>
+                <p id="tongdiem"><strong style="color: black">Tổng điểm: </strong></p>
+                <hr>
+                <p id="thcs"><strong style="color: black">Trường THCS đã học: </strong></p>
+                <p id="address"><strong style="color: black">Địa chỉ: </strong></p>
+                <p id="uutien"><strong style="color: black">Ưu tiên: </strong></p>
+                <p id="diemuutien"><strong style="color: black">Điểm ưu tiên: </strong></p>
+                <hr>
+                <table class="table table-bordered table-striped">
+                    <tr>
+                        <th>Lớp</th>
+                        <th>TBM</th>
+                        <th>Học lực</th>
+                        <th>Hạnh kiểm</th>
+                        <th>Điểm</th>
+                    </tr>
+                    <tr>
+                        <th>6</th>
+                        <th id="tbm6" class="valueTable"></th>
+                        <th id="hl6" class="valueTable"></th>
+                        <th id="hk6" class="valueTable"></th>
+                        <th id="d6" class="valueTable"></th>
+                    </tr>
+                    <tr>
+                        <th>7</th>
+                        <th id="tbm7" class="valueTable"></th>
+                        <th id="hl7" class="valueTable"></th>
+                        <th id="hk7" class="valueTable"></th>
+                        <th id="d7" class="valueTable"></th>
+                    </tr>
+                    <tr>
+                        <th>8</th>
+                        <th id="tbm8" class="valueTable"></th>
+                        <th id="hl8" class="valueTable"></th>
+                        <th id="hk8" class="valueTable"></th>
+                        <th id="d8" class="valueTable"></th>
+                    </tr>
+                    <tr>
+                        <th>9</th>
+                        <th id="tbm9" class="valueTable"></th>
+                        <th id="hl9" class="valueTable"></th>
+                        <th id="hk9" class="valueTable"></th>
+                        <th id="d9" class="valueTable"></th>
+                    </tr>
+                </table>
+            </div>
+            <div id="error" style="display:none">
+                <h2 class="text-center text-danger">ĐÃ CÓ LỖI</h2>
+                <p class="text-center" id="error_value"></p>
+                <div class="row justify-content-center">
+                    <div class="col-md-5 form-group text-center">
+                      <button class="btn btn-block btn-info rounded-0 py-2 px-4" onClick="redo()" >XEM LẠI</button>
+                      <span class="submitting"></span>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center credit">© Copyright <strong>TVT Score</strong> by <a href="https://www.facebook.com/quocthinhvo.dev">@quocthinhvo</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+      .valueTable {
+          text-decoration: none;
+          font-style: normal;
+      }
+      th {
+          text-align: center;
+      }
+  </style>
+    
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/index.js"></script>
+
+  </body>
+</html>

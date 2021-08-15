@@ -1,0 +1,24 @@
+{
+  "name": "tvtscore",
+  "version": "1.0.0",
+  "description": "Ứng dụng xem điểm thi, kết quả xét tuyển của trường THPT Trần Văn Thời",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quocthinhvo/tvtscore.git"
+  },
+  "author": "Vo Quoc Thinh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/quocthinhvo/tvtscore/issues"
+  },
+  "homepage": "https://github.com/quocthinhvo/tvtscore#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.13.7"
+  }
+}
