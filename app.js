@@ -1,7 +1,7 @@
 const express = require('express');
 const dotEnv = require('dotenv').config()
 const app = express();
-const port = process.env.PORT || 8000
+const port = process.env.PORT || 1102
 const database = require('./controller/database')
 
 app.use(express.static(__dirname + '/public'))
